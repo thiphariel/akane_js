@@ -1,3 +1,3 @@
 export default function Home() {
-  return <main className="mt-24 flex justify-center">Home</main>
+  return <h1 className="mb-10 text-4xl font-extrabold">Home</h1>
 }
