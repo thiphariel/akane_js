@@ -360,94 +360,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   }
 }
 
-export interface ApiProjectProject extends Schema.CollectionType {
-  collectionName: 'projects'
-  info: {
-    singularName: 'project'
-    pluralName: 'projects'
-    displayName: 'Project'
-    description: ''
-  }
-  options: {
-    draftAndPublish: true
-  }
-  pluginOptions: {
-    i18n: {
-      localized: true
-    }
-  }
-  attributes: {
-    name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-      }> &
-      Attribute.SetMinMaxLength<{
-        minLength: 3
-        maxLength: 255
-      }>
-    description: Attribute.Blocks &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-      }>
-    active: Attribute.Boolean &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-      }> &
-      Attribute.DefaultTo<false>
-    open: Attribute.Boolean &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-      }> &
-      Attribute.DefaultTo<false>
-    type: Attribute.Enumeration<['House', 'Other']> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-      }> &
-      Attribute.DefaultTo<'House'>
-    screenshots: Attribute.Media &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true
-        }
-      }>
-    createdAt: Attribute.DateTime
-    updatedAt: Attribute.DateTime
-    publishedAt: Attribute.DateTime
-    createdBy: Attribute.Relation<
-      'api::project.project',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    updatedBy: Attribute.Relation<
-      'api::project.project',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private
-    localizations: Attribute.Relation<
-      'api::project.project',
-      'oneToMany',
-      'api::project.project'
-    >
-    locale: Attribute.String
-  }
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files'
   info: {
@@ -763,6 +675,157 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   }
 }
 
+export interface ApiMenuItemMenuItem extends Schema.CollectionType {
+  collectionName: 'menu_items'
+  info: {
+    singularName: 'menu-item'
+    pluralName: 'menu-items'
+    displayName: 'MenuItem'
+    description: ''
+  }
+  options: {
+    draftAndPublish: true
+  }
+  pluginOptions: {
+    i18n: {
+      localized: true
+    }
+  }
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true
+        }
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 3
+        maxLength: 255
+      }>
+    url: Attribute.String &
+      Attribute.Unique &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true
+        }
+      }> &
+      Attribute.SetMinMaxLength<{
+        maxLength: 255
+      }>
+    createdAt: Attribute.DateTime
+    updatedAt: Attribute.DateTime
+    publishedAt: Attribute.DateTime
+    createdBy: Attribute.Relation<
+      'api::menu-item.menu-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private
+    updatedBy: Attribute.Relation<
+      'api::menu-item.menu-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private
+    localizations: Attribute.Relation<
+      'api::menu-item.menu-item',
+      'oneToMany',
+      'api::menu-item.menu-item'
+    >
+    locale: Attribute.String
+  }
+}
+
+export interface ApiProjectProject extends Schema.CollectionType {
+  collectionName: 'projects'
+  info: {
+    singularName: 'project'
+    pluralName: 'projects'
+    displayName: 'Project'
+    description: ''
+  }
+  options: {
+    draftAndPublish: true
+  }
+  pluginOptions: {
+    i18n: {
+      localized: true
+    }
+  }
+  attributes: {
+    name: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true
+        }
+      }> &
+      Attribute.SetMinMaxLength<{
+        minLength: 3
+        maxLength: 255
+      }>
+    description: Attribute.Blocks &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true
+        }
+      }>
+    active: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true
+        }
+      }> &
+      Attribute.DefaultTo<false>
+    open: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true
+        }
+      }> &
+      Attribute.DefaultTo<false>
+    type: Attribute.Enumeration<['House', 'Other']> &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true
+        }
+      }> &
+      Attribute.DefaultTo<'House'>
+    screenshots: Attribute.Media &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true
+        }
+      }>
+    createdAt: Attribute.DateTime
+    updatedAt: Attribute.DateTime
+    publishedAt: Attribute.DateTime
+    createdBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private
+    updatedBy: Attribute.Relation<
+      'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private
+    localizations: Attribute.Relation<
+      'api::project.project',
+      'oneToMany',
+      'api::project.project'
+    >
+    locale: Attribute.String
+  }
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -773,13 +836,14 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission
       'admin::transfer-token': AdminTransferToken
       'admin::transfer-token-permission': AdminTransferTokenPermission
-      'api::project.project': ApiProjectProject
       'plugin::upload.file': PluginUploadFile
       'plugin::upload.folder': PluginUploadFolder
       'plugin::i18n.locale': PluginI18NLocale
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission
       'plugin::users-permissions.role': PluginUsersPermissionsRole
       'plugin::users-permissions.user': PluginUsersPermissionsUser
+      'api::menu-item.menu-item': ApiMenuItemMenuItem
+      'api::project.project': ApiProjectProject
     }
   }
 }
