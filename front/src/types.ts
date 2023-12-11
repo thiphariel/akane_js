@@ -10,6 +10,14 @@ type MenuItem = {
   url?: string
 }
 
+export type Screenshot = {
+  id: string
+  name: string
+  width: number
+  height: number
+  url: string
+}
+
 export type Project = {
   id: string
   name: string
@@ -19,11 +27,5 @@ export type Project = {
   createdAt: string
   updatedAt: string
   type: string
-  screenshots: {
-    id: string
-    name: string
-    width: number
-    height: number
-    url: string
-  }[]
+  screenshots: Screenshot[]
 }
