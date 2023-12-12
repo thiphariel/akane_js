@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "cd $INIT_CWD/front && npm i && cd $INIT_CWD/back && npm i",
+    "dev:front": "cd $INIT_CWD/front && npm run dev",
+    "dev:back": "cd $INIT_CWD/back && npm run develop",
+    "dev": "conc npm:dev:*"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
