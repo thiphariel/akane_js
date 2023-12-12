@@ -5,6 +5,10 @@ import {
   type BlocksContent,
 } from '@strapi/blocks-react-renderer'
 
-export default function BlocksRenderer({ content }: BlocksContent) {
+export default function BlocksRenderer({
+  content,
+}: {
+  content: BlocksContent
+}) {
   return <Blocks content={content} />
 }
