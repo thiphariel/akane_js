@@ -33,7 +33,7 @@ function Project({ name, description, screenshots }: Project) {
         width={screenshot.width}
         height={screenshot.height}
         alt={screenshot.name}
-        quality={45}
+        quality={20}
         priority
         className="group absolute -right-40 top-8 z-10 w-[28.25rem] rounded-t-lg shadow-2xl transition group-odd:-left-40 group-odd:right-[initial] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2 group-hover:scale-105 group-odd:group-hover:translate-x-3 group-odd:group-hover:translate-y-3 group-odd:group-hover:rotate-2"
       />
@@ -43,7 +43,7 @@ function Project({ name, description, screenshots }: Project) {
           width={screenshot_back.width}
           height={screenshot_back.height}
           alt={screenshot_back.name}
-          quality={45}
+          quality={5}
           priority
           className="group absolute -right-44 top-6 w-[28.25rem] rotate-2 rounded-t-lg shadow-2xl transition group-odd:-left-44 group-odd:right-[initial] group-odd:-rotate-2 group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:rotate-3 group-hover:scale-105 group-odd:group-hover:translate-x-3 group-odd:group-hover:translate-y-3 group-odd:group-hover:-rotate-3"
         />
