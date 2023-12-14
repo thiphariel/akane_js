@@ -1,5 +1,6 @@
 import { apiCall } from '@/actions'
 import BlocksRenderer from '@/components/blocks-renderer'
+import Gallery from '@/components/gallery'
 import config from '@/config'
 import { Project, Screenshot } from '@/types'
 import Image from 'next/image'
@@ -41,6 +42,8 @@ function Project({ description, screenshots }: Project) {
           <BlocksRenderer content={description} />
         </div>
       </div>
+
+      <Gallery screenshots={screenshots} />
     </section>
   )
 }

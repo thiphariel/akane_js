@@ -10,12 +10,25 @@ type MenuItem = {
   url?: string
 }
 
+type ScreenshotFormat = {
+  name: string
+  width: number
+  height: number
+  url: string
+}
+
 export type Screenshot = {
   id: string
   name: string
   width: number
   height: number
   url: string
+  formats: {
+    large: ScreenshotFormat
+    medium: ScreenshotFormat
+    small: ScreenshotFormat
+    thumbnail: ScreenshotFormat
+  }
 }
 
 export type Project = {
