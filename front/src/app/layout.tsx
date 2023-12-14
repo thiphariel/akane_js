@@ -1,5 +1,6 @@
 import { apiCall } from '@/actions'
 import Header from '@/components/header'
+import PageTransition from '@/components/page-transition'
 import ThemeSwitcher from '@/components/theme-switcher'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
@@ -45,7 +46,9 @@ export default async function RootLayout({
       <body
         className={`${century.className} bg-gray-50 dark:bg-gray-950 text-gray-950 dark:text-gray-50 dark:text-opacity-90 relative transition-colors h-[5000px]`}>
         <Header menuItems={menuItems} />
-        <main className="mt-24 flex justify-center">{children}</main>
+        <PageTransition>
+          <main className="mt-24 flex justify-center">{children}</main>
+        </PageTransition>
         <ThemeSwitcher />
       </body>
     </html>
