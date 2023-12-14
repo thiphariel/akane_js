@@ -1,5 +1,6 @@
+import { apiCall } from '@/actions'
 import BlocksRenderer from '@/components/blocks-renderer'
-import config, { apiCall } from '@/config'
+import config from '@/config'
 import { Project, Screenshot } from '@/types'
 import Image from 'next/image'
 

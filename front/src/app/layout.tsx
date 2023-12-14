@@ -1,6 +1,6 @@
+import { apiCall } from '@/actions'
 import Header from '@/components/header'
 import ThemeSwitcher from '@/components/theme-switcher'
-import { apiCall } from '@/config'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
