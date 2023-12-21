@@ -18,12 +18,13 @@ export default async function ProjectDetails({
   return (
     <section className="container flex flex-col items-center">
       <h1 className="mb-10 text-4xl font-extrabold">{project.name}</h1>
-      <Project {...project} />
+      <Project project={project} />
     </section>
   )
 }
 
-function Project({ description, screenshots }: Project) {
+function Project({ project }: { project: Project }) {
+  const { screenshots, description } = project
   const screenshot: Screenshot = screenshots[0]
 
   return (
@@ -43,7 +44,7 @@ function Project({ description, screenshots }: Project) {
         </div>
       </div>
 
-      <Gallery screenshots={screenshots} />
+      <Gallery project={project} />
     </section>
   )
 }

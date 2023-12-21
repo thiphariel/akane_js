@@ -20,6 +20,7 @@ type ScreenshotFormat = {
 export type Screenshot = {
   id: string
   name: string
+  caption: string
   width: number
   height: number
   url: string
