@@ -1,5 +1,4 @@
 import { email } from '@/actions'
-import styles from './commission.module.css'
 import { FiSend } from 'react-icons/fi'
 
 export default function Commission() {
